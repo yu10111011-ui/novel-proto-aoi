@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>ネオン・レゾナンス — アオイ・ミズキ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="title-screen" class="screen active">
+      <div class="title-glow"></div>
+      <div class="title-content">
+        <p class="title-sub">短いノベルゲーム・プロトタイプ</p>
+        <h1 class="title-main">ネオン・レゾナンス</h1>
+        <p class="title-char">feat. アオイ・ミズキ</p>
+        <button id="btn-start" class="btn-primary" type="button">はじめる</button>
+        <p class="title-hint">タップ／クリックで進みます</p>
+      </div>
+    </section>
+    <section id="game-screen" class="screen">
+      <div id="stage" class="stage">
+        <div class="stage-bg" aria-hidden="true">
+          <div class="city-skyline"></div>
+          <div class="stage-lights"></div>
+          <div class="particle-layer"></div>
+        </div>
+        <div id="sprite" class="sprite" aria-hidden="true">
+          <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" class="sprite-svg">
+            <path d="M55 70 Q20 140 30 260 Q40 280 50 250 Q45 160 70 90 Z" fill="#5eead4" opacity="0.95"/>
+            <path d="M55 70 Q25 145 35 255 Q42 270 48 245 Q44 155 68 88 Z" fill="#2dd4bf" opacity="0.5"/>
+            <path d="M145 70 Q180 140 170 260 Q160 280 150 250 Q155 160 130 90 Z" fill="#5eead4" opacity="0.95"/>
+            <path d="M145 70 Q175 145 165 255 Q158 270 152 245 Q156 155 132 88 Z" fill="#2dd4bf" opacity="0.5"/>
+            <ellipse cx="100" cy="95" rx="48" ry="52" fill="#67e8f9"/>
+            <path d="M70 175 L65 300 L90 295 L100 220 L110 295 L135 300 L130 175 Z" fill="#0f172a"/>
+            <path d="M75 175 L78 250 L100 210 L122 250 L125 175 Z" fill="#14b8a6" opacity="0.85"/>
+            <path d="M70 180 Q45 200 50 240 Q60 230 75 210 Z" fill="#134e4a"/>
+            <path d="M130 180 Q155 200 150 240 Q140 230 125 210 Z" fill="#134e4a"/>
+            <rect x="90" y="155" width="20" height="25" rx="6" fill="#fde68a"/>
+            <ellipse cx="100" cy="120" rx="38" ry="42" fill="#fde68a"/>
+            <path d="M62 105 Q70 70 100 68 Q130 70 138 105 Q125 85 100 82 Q75 85 62 105 Z" fill="#22d3ee"/>
+            <path d="M85 68 Q90 95 88 115" stroke="#67e8f9" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M115 68 Q110 95 112 115" stroke="#67e8f9" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <ellipse cx="85" cy="122" rx="8" ry="10" fill="#0e7490"/>
+            <ellipse cx="115" cy="122" rx="8" ry="10" fill="#0e7490"/>
+            <circle cx="87" cy="120" r="3" fill="#ecfeff"/>
+            <circle cx="117" cy="120" r="3" fill="#ecfeff"/>
+            <path d="M92 140 Q100 148 108 140" stroke="#db2777" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <rect x="55" y="100" width="12" height="28" rx="4" fill="#f472b6"/>
+            <rect x="133" y="100" width="12" height="28" rx="4" fill="#f472b6"/>
+            <path d="M67 95 Q100 70 133 95" stroke="#f472b6" stroke-width="4" fill="none"/>
+            <path d="M100 210 L100 280" stroke="#67e8f9" stroke-width="2" opacity="0.8"/>
+            <circle cx="100" cy="200" r="6" fill="#f0abfc" opacity="0.9"/>
+          </svg>
+        </div>
+        <div id="dialogue-box" class="dialogue-box">
+          <div id="name-plate" class="name-plate">アオイ</div>
+          <p id="dialogue-text" class="dialogue-text"></p>
+          <span id="continue-hint" class="continue-hint" aria-hidden="true">▼</span>
+        </div>
+        <div id="choices" class="choices hidden" role="group" aria-label="選択肢"></div>
+      </div>
+    </section>
+    <section id="ending-screen" class="screen">
+      <div class="ending-content">
+        <p id="ending-label" class="ending-label"></p>
+        <h2 id="ending-title" class="ending-title"></h2>
+        <p id="ending-message" class="ending-message"></p>
+        <button id="btn-retry" class="btn-primary" type="button">タイトルへ戻る</button>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
